@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="qr-lite.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="generator" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">QR Code Generator</p>
+          <h1 id="page-title">Create a scannable QR code from any URL.</h1>
+        </div>
+
+        <form class="url-form" id="qr-form" novalidate>
+          <label for="url-input">URL</label>
+          <div class="input-row">
+            <input
+              id="url-input"
+              name="url"
+              type="url"
+              placeholder="https://example.com"
+              autocomplete="url"
+              required
+            />
+            <button type="submit">Generate</button>
+          </div>
+          <p class="message" id="message" aria-live="polite"></p>
+        </form>
+
+        <div class="preview" aria-live="polite">
+          <div class="qr-frame">
+            <canvas id="qr-canvas" width="280" height="280"></canvas>
+            <p id="empty-state">Your QR code will appear here</p>
+          </div>
+          <button class="secondary" id="download-button" type="button" disabled>
+            Download PNG
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
